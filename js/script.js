@@ -1,42 +1,23 @@
-// 헤더부분
 let lastScrollY = window.scrollY; // 마지막 스크롤 위치
 let timeout; // 헤더 숨김을 위한 타이머
 const header = document.querySelector(".header");
-
-// 모든 섹션과 메뉴 항목을 가져옴
-// const sections = document.querySelectorAll("div");
-// const navLi = document.querySelectorAll(".nvi li a");
-
-// window.addEventListener("scroll", () => {
-//   let current = "";
-
-//   sections.forEach((section) => {
-//     const sectionTop = section.offsetTop;
-//     const sectionHeight = section.clientHeight;
-//     if (pageYOffset >= sectionTop - sectionHeight / 3) {
-//       current = section.getAttribute("id");
-//     }
-//   });
-
-//   navLi.forEach((a) => {
-//     a.classList.remove("active");
-//     if (a.getAttribute("href").includes(current)) {
-//       a.classList.add("active");
-//     }
-//   });
-// });
 
 // 스크롤 이벤트 리스너
 window.addEventListener("scroll", () => {
   clearTimeout(timeout); // 기존 타이머 초기화
 
-  // 스크롤이 발생하면 헤더를 보이게 설정
-  header.classList.remove("hidden");
+  if (window.scrollY === 0) {
+    // 스크롤 위치가 맨 위라면 헤더를 항상 보이게 설정
+    header.classList.remove("hidden");
+  } else {
+    // 스크롤이 발생하면 헤더를 보이게 설정
+    header.classList.remove("hidden");
 
-  // 스크롤이 끝나고 2초 후에 헤더를 숨김
-  timeout = setTimeout(() => {
-    header.classList.add("hidden");
-  }, 2000);
+    // 스크롤이 끝나고 2초 후에 헤더를 숨김
+    timeout = setTimeout(() => {
+      header.classList.add("hidden");
+    }, 2000);
+  }
 
   lastScrollY = window.scrollY; // 마지막 스크롤 위치 업데이트
 });

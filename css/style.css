@@ -1,5 +1,4 @@
 /* header start */
-/* header start */
 .header {
   position: fixed; /* 헤더를 상단에 고정 */
   top: 0;
@@ -696,7 +695,7 @@
 .app-box {
   display: flex;
   height: 100%;
-  width: 1200px;
+  width: 1600px;
   margin: 0 auto; /* 가로 중앙 정렬 */
   gap: 40px;
 }
@@ -728,10 +727,10 @@
 /* .app-1-monitor의 이미지 크기를 조정 */
 .app-1-mobile > img,
 .app-2-mobile > img {
-  width: 1000px; /* 원하는 가로 길이 */
-  height: auto; /* 비율에 맞게 자동 조정 */
+  height: 800px; /* 비율에 맞게 자동 조정 */
   max-width: 100%; /* 컨테이너를 넘지 않도록 설정 */
   max-height: 100%; /* 컨테이너를 넘지 않도록 설정 */
+  object-fit: contain;
 }
 
 /* .app-1-text와 .app-2-text의 자식 요소들을 왼쪽 정렬로 배치 */
@@ -791,7 +790,7 @@
 
 /* .angry-badge 내부 span 스타일 */
 .angry-badge span {
-  background-color: #26ee3a;
+  background-color: #18eac2;
   padding: 5px 20px;
   border-radius: 20px;
   display: inline-block; /* span을 인라인 블록으로 설정 */
@@ -811,7 +810,7 @@
 
 /* .ddakalss-badge 내부 span 스타일 */
 .ddakalss-badge span {
-  background-color: #32a58c;
+  background-color: #5353a5;
   padding: 5px 20px;
   border-radius: 20px;
   display: inline-block; /* span을 인라인 블록으로 설정 */
@@ -893,7 +892,7 @@
 .web-box {
   display: flex;
   height: 100%;
-  width: 1200px;
+  width: 1600px;
   margin: 0 auto; /* 가로 중앙 정렬 */
   gap: 40px;
 }
@@ -925,10 +924,10 @@
 /* .web-1-monitor의 이미지 크기를 조정 */
 .web-1-monitor > img,
 .web-1-monitor > img {
-  width: 1000px; /* 원하는 가로 길이 */
-  height: auto; /* 비율에 맞게 자동 조정 */
+  height: 800px; /* 비율에 맞게 자동 조정 */
   max-width: 100%; /* 컨테이너를 넘지 않도록 설정 */
   max-height: 100%; /* 컨테이너를 넘지 않도록 설정 */
+  object-fit: contain;
 }
 
 /* .web-1-text와 .web-2-text의 자식 요소들을 왼쪽 정렬로 배치 */
@@ -1036,7 +1035,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .detailpage-text {
@@ -1258,12 +1257,13 @@
 .footer-bg {
   background-color: #404040; /* 배경색 설정 */
   width: 100vw; /* 가로 전체에 적용 */
-  padding: 20px 0; /* 상하 패딩 추가 */
+  height: auto; /* 높이 설정 */
+  padding: 10px 0; /* 상하 패딩 추가 */
+  position: relative; /* footer의 위치를 상대적으로 설정 */
 }
 
 /* footer 스타일 */
 footer {
-  height: 300px; /* 높이 설정 */
   padding: 0; /* 상하 여백 제거 */
   display: flex; /* Flexbox 활성화 */
   flex-direction: column; /* 자식 요소들을 세로 방향으로 배치 */
@@ -1271,10 +1271,12 @@ footer {
   align-items: center; /* 자식 요소들을 가로 중앙에 배치 */
   text-align: center; /* 텍스트 정렬을 가운데로 설정 */
   color: #fff; /* 기본 텍스트 색상 설정 */
+  overflow: hidden;
 }
 
 /* footer-inner-box 스타일 */
 .footer-inner-box {
+  height: 100px; /* 높이 설정 */
   display: flex; /* Flexbox 활성화 */
   justify-content: center; /* 아이콘들을 가로 방향으로 중앙 정렬 */
   align-items: center; /* 아이콘들을 세로 방향으로 중앙 정렬 */
@@ -1286,7 +1288,7 @@ footer {
   width: 60px; /* 아이콘의 너비 설정 (필요시 조정) */
   height: auto; /* 비율에 맞게 높이 자동 조정 */
   display: inline-block; /* 인라인 블록으로 설정 */
-  margin-bottom: 80px; /* 아래쪽 여백 추가 */
+  margin-bottom: 50px; /* 아래쪽 여백 추가 */
 }
 
 /* footer-inner-box 바로 아래 span 스타일 */
@@ -1297,5 +1299,5 @@ footer span {
   display: block; /* 블록 레벨로 변경하여 줄바꿈을 가능하게 함 */
   margin-top: 5px; /* footer-inner-box와의 간격 설정 */
   color: #ffffff; /* 텍스트 색상 (필요시 조정) */
-  margin-bottom: 20px; /* 아래쪽 여백 추가 */
+  margin-bottom: 30px; /* 아래쪽 여백 추가 */
 }
