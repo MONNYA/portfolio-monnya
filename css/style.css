@@ -192,7 +192,7 @@
 /* 콜라 이미지 스타일 */
 .cola {
   position: absolute;
-  left: 5%; /* 텍스트 왼쪽으로 배치 */
+  left: 0%; /* 텍스트 왼쪽으로 배치 */
   top: 70%;
   transform: translateY(-50%); /* 세로 중앙 정렬 */
   z-index: 1; /* 텍스트 뒤에 위치 */
@@ -321,6 +321,7 @@
   font-weight: 400;
   margin-top: 100px !important;
   margin-bottom: 50px; /* 제목과 컨테이너 사이의 간격 */
+  color: #303030 !important;
 }
 
 .title-g-bg {
@@ -828,281 +829,511 @@
   line-height: 1.5; /* 텍스트 높이를 조정 */
 }
 
-/* web start */
-.web {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* 100% viewport height */
-  margin: 0;
-  overflow: hidden;
+  /* web start */
+  .web {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* 100% viewport height */
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* web 1 */
+  .web-1 {
+    width: 1800px;
+    height: 700px;
+    overflow: hidden; /* 영역을 벗어나는 내용은 보이지 않게 설정 */
+    position: relative; /* 자식 요소의 절대 위치 설정을 위한 기준 설정 */
+  }
+  
+  .web-1-tag-text {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: #ccc;
+    position: absolute;
+    top: 30px; /* 상단에서 30px 위치 */
+    right: 10px; /* 오른쪽에서 10px 위치 */
+    font-size: 18px; /* 폰트 사이즈를 적절히 조정 */
+  }
+  
+  /* web 2 */
+  .web-2-background {
+    width: 100vw; /* 뷰포트 너비를 기준으로 100% 설정 */
+    background-color: #f8f8f8; /* 원하는 배경색으로 변경 */
+    padding: 0; /* 여백 제거 */
+    box-sizing: border-box; /* 여백과 패딩을 포함하도록 설정 */
+    display: flex; /* Flexbox 활성화 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+  }
+  
+  .web-2 {
+    width: 1800px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* .web-tag-text를 오른쪽 상단에 위치시키기 */
+  .web-2-tag-text {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: #ccc;
+    position: absolute;
+    top: 30px; /* 상단에서 30px 위치 */
+    left: 10px; /* 왼쪽에서 10px 위치 */
+    font-size: 18px; /* 폰트 사이즈를 적절히 조정 */
+  }
+  
+  /* .web-box의 자식 div 두 개를 나란히 배치 */
+  .web-box {
+    display: flex;
+    height: 100%;
+    width: 1600px;
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    gap: 40px;
+  }
+  
+  .web-box > div {
+    display: flex;
+    justify-content: center; /* 자식 요소들을 가로 중앙에 배치 */
+    align-items: center; /* 자식 요소들을 세로 중앙에 배치 */
+  }
+  
+  /* .web-box의 자식 div 두 개의 비율 조정 */
+  .web-box > .web-1-monitor,
+  .web-box > .web-2-monitor {
+    flex: 1; /* .web-1-monitor와 .web-2-monitor의 가로 비율을 더 크게 설정 */
+  }
+  
+  .web-box > .web-1-monitor,
+  .web-box > .web-2-monitor {
+    flex: 1; /* .web-1-text와 .web-2-text의 가로 비율을 더 작게 설정 */
+  }
+  
+  /* 이미지가 컨테이너를 넘지 않도록 설정 */
+  .web-box img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* .web-1-monitor의 이미지 크기를 조정 */
+  .web-1-monitor > img,
+  .web-2-monitor > img {
+    height: 800px; /* 비율에 맞게 자동 조정 */
+    max-width: 100%; /* 컨테이너를 넘지 않도록 설정 */
+    max-height: 100%; /* 컨테이너를 넘지 않도록 설정 */
+    object-fit: contain;
+  }
+  
+  /* .web-1-text와 .web-2-text의 자식 요소들을 왼쪽 정렬로 배치 */
+  .web-1-text,
+  .web-2-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 자식 요소들을 상단에서 시작하도록 설정 */
+    align-items: flex-start; /* 자식 요소들을 왼쪽 정렬로 배치 */
+    text-align: left; /* 텍스트와 인라인 요소들을 왼쪽 정렬 */
+  }
+  
+  /* .web-1-title과 .app-2-title */
+  .web-1-title,
+  .web-2-title {
+    width: 500px; /* 자식 요소들이 전체 너비를 차지하지 않도록 설정 */
+    margin-bottom: 20px;
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+  }
+  
+  /* .web-1-body와 .app-2-body */
+  .web-1-body,
+  .web-2-body {
+    width: auto; /* 자식 요소들이 전체 너비를 차지하지 않도록 설정 */
+    margin-bottom: 20px;
+    text-align: center; /* 텍스트를 왼쪽 정렬 */
+    line-height: 1.7rem;
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  
+  /* .web-1-info와 .app-2-info */
+  .web-1-info,
+  .web-2-info {
+    width: auto; /* 자식 요소들이 전체 너비를 차지하지 않도록 설정 */
+    margin-bottom: 20px;
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+  }
+  
+  /* .web-1-info span과 .app-2-info span의 자식 요소들을 위아래로 배치 */
+  .web-1-info span,
+  .web-2-info span {
+    display: block; /* 자식 요소들을 블록으로 설정하여 위아래로 배치 */
+    margin-bottom: 5px; /* 자식 요소들 사이에 간격 추가 */
+  }
+  
+  .veganiety-badge,
+  .damdaguni-badge,
+  .badminton-badge,
+   .gcova-badge{
+    display: flex;
+    justify-content: flex-start; /* 내부 링크들을 왼쪽으로 정렬 */
+    gap: 10px; /* 링크들 사이의 간격 조정 */
+  }
+  
+  /* .angry-badge 내부 span 스타일 */
+  .veganiety-badge span {
+    background-color: #26ee3a;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block; /* span을 인라인 블록으로 설정 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+  
+  /* .angry-badge a 링크 스타일 */
+  .veganiety-badge a {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000; /* 링크의 텍스트 색상 설정 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    display: inline-block; /* a 태그를 인라인 블록으로 설정 */
+    line-height: 1.5; /* 텍스트 높이를 조정 */
+  }
+  
+  /* .ddakalss-badge 내부 span 스타일 */
+  .damdaguni-badge span {
+    background-color: #32a58c;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block; /* span을 인라인 블록으로 설정 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+  
+  /* .ddakalss-badge a 링크 스타일 */
+  .damdaguni-badge a {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff; /* 링크의 텍스트 색상 설정 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    display: inline-block; /* a 태그를 인라인 블록으로 설정 */
+    line-height: 1.5; /* 텍스트 높이를 조정 */
+  }
+  
+/* web 3 */
+.web-3 {
+    width: 1800px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
 }
 
-/* web 1 */
-.web-1 {
-  width: 1800px;
-  height: 700px;
-  overflow: hidden; /* 영역을 벗어나는 내용은 보이지 않게 설정 */
-  position: relative; /* 자식 요소의 절대 위치 설정을 위한 기준 설정 */
+.web-3-tag-text {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: #ccc;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    font-size: 18px;
 }
 
-.web-1-tag-text {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 200;
-  font-size: 16px;
-  color: #ccc;
-  position: absolute;
-  top: 30px; /* 상단에서 30px 위치 */
-  right: 10px; /* 오른쪽에서 10px 위치 */
-  font-size: 18px; /* 폰트 사이즈를 적절히 조정 */
+.web-3-monitor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
 
-/* web 2 */
-.web-2-background {
-  width: 100vw; /* 뷰포트 너비를 기준으로 100% 설정 */
-  background-color: #f8f8f8; /* 원하는 배경색으로 변경 */
-  padding: 0; /* 여백 제거 */
-  box-sizing: border-box; /* 여백과 패딩을 포함하도록 설정 */
-  display: flex; /* Flexbox 활성화 */
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
+.image-container {
+    width: 70%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-start; /* 세로 정렬을 시작 위치에서 */
+    border: none;
 }
 
-.web-2 {
-  width: 1800px;
-  height: 700px;
-  overflow: hidden;
-  position: relative;
+/* 스크롤바를 숨기는 스타일 */
+.image-container::-webkit-scrollbar {
+    display: none;
 }
 
-/* .web-tag-text를 오른쪽 상단에 위치시키기 */
-.web-2-tag-text {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 200;
-  font-size: 16px;
-  color: #ccc;
-  position: absolute;
-  top: 30px; /* 상단에서 30px 위치 */
-  left: 10px; /* 왼쪽에서 10px 위치 */
-  font-size: 18px; /* 폰트 사이즈를 적절히 조정 */
+.image-container img {
+    display: block;
+    width: 100%; /* 이미지 너비를 컨테이너의 80%로 설정 */
+    height: auto;
+    max-height: none;
+    margin: 0 auto; /* 이미지의 좌우 중앙 정렬 */
 }
 
-/* .web-box의 자식 div 두 개를 나란히 배치 */
-.web-box {
-  display: flex;
-  height: 100%;
-  width: 1600px;
-  margin: 0 auto; /* 가로 중앙 정렬 */
-  gap: 40px;
+.web-3-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
 }
 
-.web-box > div {
-  display: flex;
-  justify-content: center; /* 자식 요소들을 가로 중앙에 배치 */
-  align-items: center; /* 자식 요소들을 세로 중앙에 배치 */
+.web-3-title {
+    width: 500px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-/* .web-box의 자식 div 두 개의 비율 조정 */
-.web-box > .web-1-monitor,
-.web-box > .web-1-monitor {
-  flex: 1; /* .web-1-monitor와 .web-2-monitor의 가로 비율을 더 크게 설정 */
+.web-3-body {
+    width: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.7rem;
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
 }
 
-.web-box > .web-1-monitor,
-.web-box > .web-1-monitor {
-  flex: 1; /* .web-1-text와 .web-2-text의 가로 비율을 더 작게 설정 */
+.web-3-info {
+    width: auto;
+    margin-bottom: 20px;
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    text-align: left;
 }
 
-/* 이미지가 컨테이너를 넘지 않도록 설정 */
-.web-box img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+.web-3-info span {
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* .web-1-monitor의 이미지 크기를 조정 */
-.web-1-monitor > img,
-.web-1-monitor > img {
-  height: 800px; /* 비율에 맞게 자동 조정 */
-  max-width: 100%; /* 컨테이너를 넘지 않도록 설정 */
-  max-height: 100%; /* 컨테이너를 넘지 않도록 설정 */
-  object-fit: contain;
+/* .badminton-badge 내부 span 스타일 */
+.gcova-badge span {
+    background-color: #ec6c00;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block; /* span을 인라인 블록으로 설정 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+  
+/* .badminton-badge a 링크 스타일 */
+.gcova-badge a {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000; /* 링크의 텍스트 색상 설정 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    display: inline-block; /* a 태그를 인라인 블록으로 설정 */
+    line-height: 1.5; /* 텍스트 높이를 조정 */
+  }
+
+
+  /* web 4 */
+.web-4 {
+    width: 1800px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
 }
 
-/* .web-1-text와 .web-2-text의 자식 요소들을 왼쪽 정렬로 배치 */
-.web-1-text,
-.web-2-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 자식 요소들을 상단에서 시작하도록 설정 */
-  align-items: flex-start; /* 자식 요소들을 왼쪽 정렬로 배치 */
-  text-align: left; /* 텍스트와 인라인 요소들을 왼쪽 정렬 */
+.web-4-tag-text {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: #ccc;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-size: 18px;
 }
 
-/* .web-1-title과 .app-2-title */
-.web-1-title,
-.web-2-title {
-  width: 500px; /* 자식 요소들이 전체 너비를 차지하지 않도록 설정 */
-  margin-bottom: 20px;
-  text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+.web-4-monitor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
 
-/* .web-1-body와 .app-2-body */
-.web-1-body,
-.web-2-body {
-  width: auto; /* 자식 요소들이 전체 너비를 차지하지 않도록 설정 */
-  margin-bottom: 20px;
-  text-align: center; /* 텍스트를 왼쪽 정렬 */
-  line-height: 1.7rem;
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 300;
-  font-size: 20px;
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-start; /* 세로 정렬을 시작 위치에서 */
+    border: none;
 }
 
-/* .web-1-info와 .app-2-info */
-.web-1-info,
-.web-2-info {
-  width: auto; /* 자식 요소들이 전체 너비를 차지하지 않도록 설정 */
-  margin-bottom: 20px;
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 200;
-  font-size: 16px;
-  text-align: left; /* 텍스트를 왼쪽 정렬 */
+/* 스크롤바를 숨기는 스타일 */
+.image-container::-webkit-scrollbar {
+    display: none;
 }
 
-/* .web-1-info span과 .app-2-info span의 자식 요소들을 위아래로 배치 */
-.web-1-info span,
-.web-2-info span {
-  display: block; /* 자식 요소들을 블록으로 설정하여 위아래로 배치 */
-  margin-bottom: 5px; /* 자식 요소들 사이에 간격 추가 */
+.image-container img {
+    display: block;
+    width: 100%; /* 이미지 너비를 컨테이너의 80%로 설정 */
+    height: auto;
+    max-height: none;
+    margin: 0 auto; /* 이미지의 좌우 중앙 정렬 */
 }
 
-.veganiety-badge,
-.damdaguni-badge {
-  display: flex;
-  justify-content: flex-start; /* 내부 링크들을 왼쪽으로 정렬 */
-  gap: 10px; /* 링크들 사이의 간격 조정 */
+.web-4-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
 }
 
-/* .angry-badge 내부 span 스타일 */
-.veganiety-badge span {
-  background-color: #26ee3a;
-  padding: 5px 20px;
-  border-radius: 20px;
-  display: inline-block; /* span을 인라인 블록으로 설정 */
-  text-align: center; /* 텍스트를 중앙 정렬 */
+.web-4-title {
+    width: 500px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-/* .angry-badge a 링크 스타일 */
-.veganiety-badge a {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #000; /* 링크의 텍스트 색상 설정 */
-  text-decoration: none; /* 링크의 밑줄 제거 */
-  display: inline-block; /* a 태그를 인라인 블록으로 설정 */
-  line-height: 1.5; /* 텍스트 높이를 조정 */
+.web-4-body {
+    width: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.7rem;
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
 }
 
-/* .ddakalss-badge 내부 span 스타일 */
-.damdaguni-badge span {
-  background-color: #32a58c;
-  padding: 5px 20px;
-  border-radius: 20px;
-  display: inline-block; /* span을 인라인 블록으로 설정 */
-  text-align: center; /* 텍스트를 중앙 정렬 */
+.web-4-info {
+    width: auto;
+    margin-bottom: 20px;
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    text-align: left;
 }
 
-/* .ddakalss-badge a 링크 스타일 */
-.damdaguni-badge a {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #fff; /* 링크의 텍스트 색상 설정 */
-  text-decoration: none; /* 링크의 밑줄 제거 */
-  display: inline-block; /* a 태그를 인라인 블록으로 설정 */
-  line-height: 1.5; /* 텍스트 높이를 조정 */
+.web-4-info span {
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* .detailpage 스타일 설정 */
-.detailpage {
-  width: 1800px;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+/* .badminton-badge 내부 span 스타일 */
+.badminton-badge span {
+    background-color: #0056a3;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block; /* span을 인라인 블록으로 설정 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+  }
+  
+/* .badminton-badge a 링크 스타일 */
+.badminton-badge a {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff; /* 링크의 텍스트 색상 설정 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    display: inline-block; /* a 태그를 인라인 블록으로 설정 */
+    line-height: 1.5; /* 텍스트 높이를 조정 */
+  }
 
-.detailpage-text {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 200;
-  font-size: 16px;
-  color: #ccc;
-  position: absolute;
-  top: 50px; /* 상단에서 30px 위치 */
-  right: 10px; /* 오른쪽에서 10px 위치 */
-  font-size: 18px; /* 폰트 사이즈를 적절히 조정 */
-}
 
-/* detailpage start */
-.detailpage-box {
-  display: flex;
-  height: 100%; /* 전체 높이를 사용 */
-  justify-content: flex-start; /* 자식 요소들을 왼쪽에서 시작하여 배치 */
-  align-items: center; /* 자식 요소들을 세로 중앙에 배치 */
-  flex-wrap: wrap; /* 자식 요소들이 컨테이너를 넘어가면 다음 줄로 배치 */
-  margin-top: 50px;
-  gap: 80px; /* 자식 요소들 사이의 간격 조정 */
-}
-
-/* .content-box와 다른 content-box들의 스타일 설정 */
-.content-box,
-.content-box2,
-.content-box3 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* 자식 요소들을 왼쪽 정렬로 배치 */
-  text-align: left; /* 텍스트 왼쪽 정렬 */
-  margin: 0 5px; /* 좌우 간격 설정 */
-}
-
-/* 이미지 스타일 설정 및 호버 시 불투명도 조정 */
-.content-box img,
-.content-box2 img,
-.content-box3 img {
-  width: 100%; /* 이미지가 컨테이너의 너비에 맞게 조정 */
-  max-width: 400px; /* 이미지의 최대 너비 설정 */
-  height: auto; /* 비율에 맞게 자동 조정 */
-  border-radius: 20px;
-  transition: opacity 0.3s ease; /* 불투명도 전환에 애니메이션 적용 */
-}
-
-.content-box img:hover,
-.content-box2 img:hover,
-.content-box3 img:hover {
-  opacity: 0.7; /* 호버 시 불투명도 70%로 설정 */
-}
-
-.content-text-b {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  margin: 20px 0px 0px 0px; /* 상단 간격 설정 */
-  padding-left: 30px; /* 왼쪽에 10px 들여쓰기 */
-}
-
-.content-text {
-  font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  padding-left: 30px; /* 왼쪽에 10px 들여쓰기 */
-  color: #ccc;
-}
+  /* .detailpage 스타일 설정 */
+  .detailpage {
+    width: 1800px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .detailpage-text {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: #ccc;
+    position: absolute;
+    top: 50px; /* 상단에서 30px 위치 */
+    right: 10px; /* 오른쪽에서 10px 위치 */
+    font-size: 18px; /* 폰트 사이즈를 적절히 조정 */
+  }
+  
+  /* detailpage start */
+  .detailpage-box {
+    display: flex;
+    height: 100%; /* 전체 높이를 사용 */
+    justify-content: flex-start; /* 자식 요소들을 왼쪽에서 시작하여 배치 */
+    align-items: center; /* 자식 요소들을 세로 중앙에 배치 */
+    flex-wrap: wrap; /* 자식 요소들이 컨테이너를 넘어가면 다음 줄로 배치 */
+    margin-top: 50px;
+    gap: 80px; /* 자식 요소들 사이의 간격 조정 */
+  }
+  
+  /* .content-box와 다른 content-box들의 스타일 설정 */
+  .content-box,
+  .content-box2,
+  .content-box3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 자식 요소들을 왼쪽 정렬로 배치 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    margin: 0 5px; /* 좌우 간격 설정 */
+  }
+  
+  /* 이미지 스타일 설정 및 호버 시 불투명도 조정 */
+  .content-box img,
+  .content-box2 img,
+  .content-box3 img {
+    width: 100%; /* 이미지가 컨테이너의 너비에 맞게 조정 */
+    max-width: 400px; /* 이미지의 최대 너비 설정 */
+    height: auto; /* 비율에 맞게 자동 조정 */
+    border-radius: 20px;
+    transition: opacity 0.3s ease; /* 불투명도 전환에 애니메이션 적용 */
+  }
+  
+  .content-box img:hover,
+  .content-box2 img:hover,
+  .content-box3 img:hover {
+    opacity: 0.7; /* 호버 시 불투명도 70%로 설정 */
+  }
+  
+  .content-text-b {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 20px 0px 0px 0px; /* 상단 간격 설정 */
+    padding-left: 30px; /* 왼쪽에 10px 들여쓰기 */
+  }
+  
+  .content-text {
+    font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 30px; /* 왼쪽에 10px 들여쓰기 */
+    color: #ccc;
+  }
 
 /* DESIGN start */
 .design {
