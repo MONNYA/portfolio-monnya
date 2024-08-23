@@ -1,0 +1,117 @@
+@charset "utf-8";
+.mb-wrap {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999998;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.mb-wrap-active {
+  opacity: 1;
+  top: 0;
+}
+.mb-logo {
+  width: 40px;
+  height: 100%;
+  position: relative; /* 위치 설정을 위해 추가 */
+}
+
+.mb-logo > img {
+  width: 40px;
+  height: auto;
+  position: relative; /* 위치 설정을 위해 추가 */
+  top: 25px;
+  left: 15px;
+}
+
+.mb-gnb {
+  max-width: 750px;
+  width: 60%;
+  height: 100%;
+  background: #fff;
+  transform: translateX(10px);
+  transition: transform 0.5s;
+}
+
+.mb-wrap-active .mb-gnb {
+  transform: translateX(0);
+}
+
+.mb-nav {
+  position: fixed;
+  display: none;
+  right: 15px;
+  top: 30px;
+  width: 30px;
+  height: 25px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 999999;
+  font-size: 0;
+}
+.mb-nav span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+}
+.mb-nav span:nth-child(1) {
+  background: #c6000b;
+  top: 0;
+  transform-origin: 0 0;
+  transition: transform 0.3s;
+}
+.mb-nav span:nth-child(2) {
+  background: #c6000b;
+  top: calc(50% - 1px);
+  left: 50%;
+  width: 50%;
+  transition: opacity 0.3s;
+}
+.mb-nav span:nth-child(3) {
+  background: #c6000b;
+  top: 100%;
+  opacity: 0;
+  transform-origin: 0 100%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.mb-nav-active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, -2px);
+}
+.mb-nav-active span:nth-child(2) {
+  opacity: 0;
+}
+.mb-nav-active span:nth-child(3) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(5px, 2px);
+}
+@media screen and (max-width: 768px) {
+  .mb-nav {
+    display: flex;
+  }
+}
+
+.mb-gnb {
+  padding-top: 60px;
+}
+
+.mb-menu {
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  margin-left: 30px;
+  line-height: 50px;
+}
+

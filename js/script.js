@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const text = "어떤 곳이든 어울리지만 존재감이 확실한"; // 표시할 텍스트
 
   // 글자를 하나씩 추가하는 함수
-  function addTextOneByOne() {
+  function addTextOneByOne(wordSpacing) {
     textElement.innerHTML = ""; // 기존 내용을 비웁니다
     for (let i = 0; i < text.length; i++) {
       const char = text[i];
@@ -44,14 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
       // 띄어쓰기가 있으면 추가 스타일 적용
       if (char === " ") {
         span.style.display = "inline-block"; // 띄어쓰기를 인라인 블록으로 표시
-        span.style.width = "20px"; // 띄어쓰기의 너비 설정 (조정 가능)
+        span.style.width = wordSpacing; // 띄어쓰기의 너비 설정
       }
 
       textElement.appendChild(span);
     }
   }
 
-  addTextOneByOne(); // 텍스트 추가 함수 호출
+  // 화면 크기에 따라 단어 간격을 조정하는 함수
+  function adjustWordSpacing() {
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+    const wordSpacing = mobileQuery.matches ? "5px" : "20px";
+    addTextOneByOne(wordSpacing); // 단어 간격 조정 후 텍스트 추가
+  }
+
+  // 초기 실행
+  adjustWordSpacing();
+
+  // 창 크기 변경 시 실행
+  window.addEventListener("resize", adjustWordSpacing);
 });
 
 // 스크롤하면 사악 나타나게
