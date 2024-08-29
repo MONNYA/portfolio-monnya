@@ -1293,7 +1293,7 @@
     font-size: 30px; /* 타이틀 텍스트 크기 */
     font-weight: 400;
     margin-top: 50px;
-    margin-bottom: 10px; /* 제목과 컨테이너 사이의 간격 */
+    margin-bottom: 2px; /* 제목과 컨테이너 사이의 간격 */
     color: #000;
   }
 

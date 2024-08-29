@@ -140,11 +140,15 @@ function touchEnd() {
 }
 
 function touchMove(event) {
-  if (isDragging) {
-    const currentPosition = getPositionX(event);
-    currentTranslate = prevTranslate + currentPosition - startPos;
-    setSliderPosition();
-  }
+  window.addEventListener("resize", function () {
+    if (window.innerWidth < 768) {
+      isDragging = false;
+    } else {
+      const currentPosition = getPositionX(event);
+      currentTranslate = prevTranslate + currentPosition - startPos;
+      setSliderPosition();
+    }
+  });
 }
 
 function getPositionX(event) {
