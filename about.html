@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/about-media.css">
+    <link rel="stylesheet" href="css/mbnav.css">
+
     <!-- swiper -->
 
     <!-- js -->
     <script src="js/about.js" defer></script>
+    <script src="js/mbnav.js" defer></script>
 
 <!-- 폰트어썸 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -28,23 +32,26 @@
   <body>
     <div class="wrap">
       <!-- mobile menu start -->
-      <!-- <button class="mbmenu-btn">
-      <span>모바일 메뉴</span>
+      <div class="mb-wrap">
+        <a href="index.html" class="mb-logo"><img src="images/logo.png" alt="logo"/></a>
+        <nav class="mb-gnb">
+         <ul class="mb-menu">
+          <li data-menuanchor="visua"><a href="index.html#visual">VISUAL</a></li>
+          <li data-menuanchor="about"><a href="index.html#about">ABOUT</a></li>
+          <li data-menuanchor="app"><a href="index.html#app">APP</a></li>
+          <li data-menuanchor="web"><a href="index.html#web">WEB</a></li>
+          <li data-menuanchor="design"><a href="index.html#design">DESIGN</a></li>
+        <li class="contact-link"><a href="#contact">CONTACT</a></li>
+         </ul>
+  </nav>
+  </div>
+     <!-- mb nav -->
+     <button class="mb-nav">
+      <span></span>
+      <span></span>
+      <span></span>
      </button>
-     <div class="mbmenu-wrap">
-      <div class="mbmenu-view">
-       <ul class="mbmenu">
-        <li data-menuanchor="about"><a href="#visual">visual</a></li>
-        <li data-menuanchor="about"><a href="#about">ABOUT</a></li>
-        <li data-menuanchor="portfolio"><a href="#profile">PORTFOLIO</a></li>
-        <li data-menuanchor="web"><a href="#portfolio">WEB</a></li>
-        <li data-menuanchor="app"><a href="#portfolio">APP</a></li>
-        <li data-menuanchor="design"><a href="#design">DESIGN</a></li>
-      <li class="contact-link"><a href="#contact">CONTACT</a></li>
-       </ul>
-</div>
-</div> -->
-      <!-- mobile menu end -->
+        <!-- mobile menu end -->
       <!-- header start -->
       <header class="header" id="home">
         <div class="header-inner">

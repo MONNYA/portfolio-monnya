@@ -401,7 +401,8 @@
 /* 타이틀 스타일 */
 .about-sub-title {
   font-family: "PyeongChangPeace-Bold";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2") format("woff2");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
   font-size: 30px; /* 타이틀 텍스트 크기 */
   font-weight: 400;
   color: #fffbc7;
@@ -412,7 +413,7 @@
 
 /* 내용 박스의 텍스트 스타일 */
 
-.about-text-b-2{
+.about-text-b-2 {
   display: block;
   font-family: "Pretendard Variable", Pretendard, Roboto, sans-serif;
   font-weight: 400;
